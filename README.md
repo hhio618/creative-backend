@@ -2,9 +2,9 @@
 ## Build using docker
 ### Setup Textile hub
 1. Install the Textile hub cli using instructions in this (url)[https://docs.textile.io/hub/accounts/].
-2. Generate API keys using follow instructions in this (url)[https://docs.textile.io/hub/apis/].
+2. Generate API keys using instructions in this (url)[https://docs.textile.io/hub/apis/].
 ### Setup the env file
-Copy env.example to `.env` and set the required env files optained from the above step.
+Copy env.example to `.env` and set the required env files obtained from the above step.
 ```
 $ cp env.example .env
 ```
