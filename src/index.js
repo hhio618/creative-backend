@@ -37,7 +37,7 @@ wsRouter.use((ctx, next) => {
   return next(ctx);
 });
 
-wsRouter.get('/', ctx => {
+app.ws.use(ctx => {
     const emitter = new Emittery()
     ctx.websocket.on('message', async msg => {
         try {
@@ -115,7 +115,8 @@ wsRouter.get('/', ctx => {
 
 // Attach both routers
 // Note it's app.ws.use for our ws router
-app.ws.use(wsRouter.routes()).use(wsRouter.allowedMethods());
-app.use(router.routes()).use(router.allowedMethods());
+// app.ws.use(wsRouter.routes()).use(wsRouter.allowedMethods());
+app.ws.use(wsRouter.allowedMethods());
+// app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(3001);
